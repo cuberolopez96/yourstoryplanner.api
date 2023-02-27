@@ -1,0 +1,20 @@
+type User {
+    username: String!
+    email: String!
+    roles: [String!]!
+}
+
+type Token {
+    token: String!
+}
+
+type SecurityQuery {
+    me: User
+    isGranted(rol: String!): Boolean!
+}
+
+type SecurityMutation {
+    login(email: String!, password: String!): Token!
+    logout: Boolean!
+    register(email: String, password: String): User
+}

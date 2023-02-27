@@ -1,0 +1,32 @@
+type Character {
+    id: Int
+    name: String
+    gender: String
+    physicalDescription: String
+    biography: String
+    project: Project
+}
+
+type CharacterQuery {
+    character(id: Int): Character
+    characters: [Character]
+}
+
+type CharacterMutation {
+    create(
+        name: String,
+        age: Int,
+        gender: String,
+        physicalDescription: String,
+        biography: String,
+        projectId: Int
+    ): Character
+    update(
+        id: Int,
+        name: String,
+        gender: String,
+        physicalDescription: String,
+        biography: String
+    ): Character
+    deleteCharacter(id: Int): Character
+}

@@ -1,0 +1,17 @@
+type Chapter {
+    id: Int
+    title: String
+    scenes: [Scene]
+    project: Project
+}
+
+type ChapterQuery {
+    chapters: [Chapter]
+    chapter(id: Int): Chapter
+}
+
+type ChapterMutation {
+    create(title: String, project: Int): Chapter
+    update(id: Int, title: String, project: Int): Chapter
+    delete(id: Int): Chapter
+}

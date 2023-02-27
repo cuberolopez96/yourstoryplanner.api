@@ -1,0 +1,17 @@
+type Scene {
+    id: Int,
+    name: String,
+    content: String,
+    chapter: Chapter,
+}
+
+type SceneQuery {
+    scenes: [Scene],
+    scene(id: Int): Scene,
+}
+
+type SceneMutation {
+    create(name: String, content: String, chapterId: Int): Scene,
+    update(id: Int, name: String, content: String, chapterId: Int): Scene,
+    delete(id: Int): Scene,
+}

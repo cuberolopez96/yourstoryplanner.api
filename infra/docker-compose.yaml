@@ -1,0 +1,29 @@
+version: '3.7'
+services:
+  db:
+    image: mysql
+    container_name: yourstoryplanner_db
+    volumes:
+      - ./_db:/var/lib/mysql
+    environment:
+      MYSQL_ALLOW_EMPTY_PASSWORD: 1
+    network_mode: bridge
+  php:
+    build: ./php
+    platform: linux/amd64
+    container_name: yourstoryplanner_php
+    volumes:
+      - ../:/home/app
+    links:
+      - db
+    network_mode: bridge
+  nginx:
+    build: ./nginx
+    container_name: yourstoryplanner_nginx
+    volumes:
+      - ../:/home/app
+    ports:
+      - 80:80
+    links:
+      - php
+    network_mode: bridge

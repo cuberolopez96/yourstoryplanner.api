@@ -1,0 +1,27 @@
+overblog_graphql:
+    definitions:
+        schema:
+            security:
+                query: SecurityQuery
+                mutation: SecurityMutation
+            project:
+                query: ProjectQuery
+                mutation: ProjectMutation
+            character:
+                query: CharacterQuery
+                mutation: CharacterMutation
+            location:
+                query: LocationQuery
+                mutation: LocationMutation
+            chapter:
+                query: ChapterQuery
+                mutation: ChapterMutation
+            scene:
+                query: SceneQuery
+                mutation: SceneMutation
+        mappings:
+            types:
+                -
+                    type: graphql
+                    dir: "%kernel.project_dir%/config/graphql/types"
+                    suffix: null

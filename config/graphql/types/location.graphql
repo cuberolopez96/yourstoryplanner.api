@@ -1,0 +1,17 @@
+type Location {
+    id: Int, 
+    name: String,
+    description: String,
+    projectId: Int,
+}
+
+type LocationQuery {
+    locations: [Location],
+    location(id: Int): Location,
+}
+
+type LocationMutation {
+    create(name: String, description: String, projectId: Int): Location,
+    update(id: Int, name: String, description: String, projectId: Int): Location,
+    delete(id: Int): Location,
+}

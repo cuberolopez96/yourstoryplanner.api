@@ -1,0 +1,19 @@
+type Project {
+    id: Int,
+    user: User,
+    title: String,
+    description: String,
+    characters: [Character],
+    locations: [Location],
+}
+
+type ProjectQuery {
+    project(id: Int): Project,
+    projects: [Project],
+}
+
+type ProjectMutation {
+    create(title: String, description: String): Project,
+    update(id: Int, name: String, description: String): Project,
+    delete(id: Int): Project,
+}

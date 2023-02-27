@@ -1,0 +1,5 @@
+{
+    "editor.formatOnSave": true,
+    "intelliphense.environment.phpVersion": "8.2",
+    "php.executablePath": "/opt/homebrew/opt/php@8.2/bin/php",
+}
